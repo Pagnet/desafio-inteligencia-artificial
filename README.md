@@ -36,7 +36,7 @@ Dadas as tabelas a seguir que tratam do cadastro dos clientes e de suas vendas. 
 
 -  Tabela clients com as colunas: id, name, cpf_cnpj, parent_client_id.
 -  Tabela sales com as colunas: id, gross_value, client_uuid, created_at.
--  
+
 ![teste ai desafio tabela](https://user-images.githubusercontent.com/85025838/216982794-fb9c7700-59f5-49ce-af01-9fd1c1b47d24.jpg)
 
 Sabendo que o parent_client_id é o identificador do dono da rede. Gostaríamos de um procedimento usando SQL que retorne como resposta uma tabela com as seguintes colunas: 
