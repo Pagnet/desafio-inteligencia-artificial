@@ -55,12 +55,12 @@ Obs. 2: O retorno deve contemplar todos os clientes e suas respectivas datas em 
 
 ## Questão 4 
 
-Programação pura. Uma aproximação da função f(x) = e^x dependendo de um número N é dada por: 
+Programação pura. Uma aproximação da função _f(x) = e^x_ dependendo de um número _N_ é dada por: 
 
 <img width="224" alt="sum e na x" src="https://user-images.githubusercontent.com/85025838/216981844-48c33c65-8dff-4490-90e1-41be63fca84c.png">
 
-em que k! = k*(k-1)*(k-2)*...*1 é o fatorial do número k. 
+em que _k! = k*(k-1)*(k-2)*...*1_ é o fatorial do número _k_. 
 
-Construa um algoritmo em Python (ou linguagem similar) que, dados x e N, retorne a aproximação descrita acima. 
+Construa um algoritmo em Python (ou linguagem similar) que, dados _x_ e _N_, retorne a aproximação descrita acima. 
 
-Calcule o erro da aproximação de e^4 para os valores de N = 5, 15, 20 e 30. Para avaliar o valor de e^4, pode usar uma biblioteca externa. 
+Calcule o erro da aproximação de _e^4_ para os valores de _N_ = 5, 15, 20 e 30. Para avaliar o valor de _e^4_, pode usar uma biblioteca externa. 
