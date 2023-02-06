@@ -32,7 +32,7 @@ No arquivo relacionamento_ia.csv temos clientes listados que aparecem como cobra
 
 ## Questão 3 
 
-Dadas as tabelas a seguir que tratam do cadastro dos clientes e de suas vendas. A tabela de vendas trás os identificadores dos clientes, seu nome e cpf_cnpj. Cada venda está relacionada a um cliente e tem um valor de venda (Gross_value) e a data em que ocorreu (created_at). Considere que nessa tabela existem mais de 1000 redes que chegam a fazer mais de uma venda por dia e temos registros de dados desde 2017. 
+Dadas as tabelas a seguir que tratam do cadastro dos clientes e de suas vendas. A tabela de vendas traz os identificadores dos clientes, seu nome e cpf_cnpj. Cada venda está relacionada a um cliente e tem um valor de venda (Gross_value) e a data em que ocorreu (created_at). Considere que nessa tabela existem mais de 1000 redes que chegam a fazer mais de uma venda por dia e temos registros de dados desde 2017. 
 
 -  Tabela clients com as colunas: id, name, cpf_cnpj, parent_client_id.
 -  Tabela sales com as colunas: id, gross_value, client_uuid, created_at.
