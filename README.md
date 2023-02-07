@@ -24,7 +24,7 @@ No arquivo .csv em anexo (ia_vende_normalmente.csv) temos dados fictícios de ve
 
 ## Questão 2 
 
-No arquivo relacionamento_ia.csv temos clientes listados que aparecem como cobradores ou cobrados.  
+No arquivo cobrancas_ia.csv temos clientes listados que aparecem como cobradores ou cobrados.  
 
 - Como você definiria a distância de relacionamento entre clientes com estas informações? 
 
