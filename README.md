@@ -8,6 +8,8 @@ Sugerimos que você faça um fork desse repositório no GitHub para a sua conta 
 
 Em boa parte dos projetos utilizamos o notebook (arquivo .ipynb) pois facilita algumas análises e acelera o desenvolvimento. Sendo assim, é desejável que ao longo do teste você crie ao menos um módulo em Python e consiga consumi-lo em um notebook (arquivo .ipynb). Dentro do repositório você pode salvar todo o seu desenvolvimento, módulos e até mesmo respostas em algum outro arquivo, se desejar. 
 
+Escolha ao menos uma função desenvolvida para aplicar um teste automatizado usando a biblioteca pytest.
+
 ## Questão 1 
 
 No arquivo .csv em anexo (ia_vende_normalmente.csv) temos dados fictícios de vendas de um determinado cliente. Gostaríamos de ver a sua linha de raciocínio e os códigos feitos para responder: 
