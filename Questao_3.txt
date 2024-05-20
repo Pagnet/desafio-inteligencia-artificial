@@ -1,0 +1,65 @@
+WITH clients_com_rede AS (
+    SELECT 
+        c1.name AS cliente_name,
+        c1.uuid,
+        COALESCE(c2.name, c1.name) AS nome_rede,
+        COALESCE(c2.cpf_cnpj, c1.cpf_cnpj) AS cpf_cnpj_rede
+    FROM 
+        clients c1 
+    LEFT JOIN 
+        clients c2 ON c1.parent_client_id = c2.id
+), sales_ano_mes AS (
+    SELECT 
+        s.*,
+        YEAR(s.created_at) AS ano,
+        MONTH(s.created_at) AS mes,
+        DATEDIFF(
+            DAY, 
+            LAG(s.created_at) OVER (PARTITION BY s.client_uuid ORDER BY s.created_at), 
+            s.created_at
+        ) AS intervalo_dias
+    FROM 
+        sales s
+    LEFT JOIN 
+        clients_com_rede cr ON cr.uuid = s.client_uuid
+)
+SELECT 
+    cr.nome_rede,
+    cr.cpf_cnpj_rede,
+    cr.cliente_name,
+    sm.mes,
+    sm.ano,
+    SUM(sm.gross_value) AS total_vendas_mes,
+    SUM(SUM(sm.gross_value)) OVER (
+        PARTITION BY cr.nome_rede, cr.cliente_name, cr.cpf_cnpj_rede
+        ORDER BY sm.ano, sm.mes
+        ROWS BETWEEN 5 PRECEDING AND CURRENT ROW
+    ) AS vendas_acumuladas_6_meses,
+    AVG(sm.intervalo_dias) AS intervalo_medio_vendas
+FROM 
+    sales_ano_mes sm
+LEFT JOIN
+    clients_com_rede cr ON cr.uuid = sm.client_uuid
+WHERE 
+    sm.created_at >= '2020-01-01'
+GROUP BY 
+    cr.nome_rede,
+    cr.cpf_cnpj_rede,
+    cr.cliente_name,
+    sm.mes,
+    sm.ano
+ORDER BY 
+    sm.mes, cr.nome_rede, cr.cliente_name, sm.ano;
+
+
+/*
+SELECT
+    nome_rede, --ok
+    cpf_cnpj_rede, --ok
+    ano_ref, --ok
+    mes_ref, --ok
+    vendas_mes, 
+    vendas_acumulado_6_meses,
+    intervalo_medio_vendas
+
+*/
