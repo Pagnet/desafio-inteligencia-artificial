@@ -1,5 +1,5 @@
 def fact(N):
-    if isinstance(N, int):
+    if not isinstance(N, int):
         raise TypeError("O argumento deve ser um inteiro")
     if N < 0:
         raise ValueError("O argumento deve ser um inteiro não-negativo")    
